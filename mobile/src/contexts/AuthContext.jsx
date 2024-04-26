@@ -15,7 +15,7 @@ export const AuthContextProvider = ({ children }) => {
         async function loadStorageData() {
             const data = await AsyncStorage.getItem(env.storageKey);
             if (data) {
-                setToken(data);
+                setToken(JSON.parse(data));
             }
             setLoadingLoadStorage(false);
         }
@@ -52,7 +52,7 @@ export const AuthContextProvider = ({ children }) => {
             await AsyncStorage.setItem(env.storageKey, JSON.stringify(data.accessToken));
             setToken(data.accessToken);
         } catch (error) {
-            console.error(error);
+            console.log(error);
             setError('Erro interno.')
         } finally {
             setLoading(false);
@@ -87,7 +87,7 @@ export const AuthContextProvider = ({ children }) => {
             await AsyncStorage.setItem(env.storageKey, JSON.stringify(data.accessToken));
             setToken(data.accessToken);
         } catch (error) {
-            console.error(error);
+            console.log(error);
             setError('Erro interno.')
         } finally {
             setLoading(false);
