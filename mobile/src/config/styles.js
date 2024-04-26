@@ -3,5 +3,6 @@ export const Colors = {
     secondary: '#1A1A1A',
     purple: '#BB86FC',
     light: '#FFFFFF',
-    grey: '#ABABAB'
+    grey: '#ABABAB',
+    red: '#C23232',
 };
